@@ -1,0 +1,24 @@
+/**
+ * @param {number} n - The initial value for the counter.
+ * @return {Function} counter - A function that increments the counter.
+ */
+var createCounter = function(n) {
+    // Initialize a variable `count` with the value of `n`.
+    let count = n;
+
+    // Return a function that increments and returns the current value of `count`.
+    return function() {
+        return count++; // Post-increment ensures the current value is returned before incrementing.
+    };
+};
+
+/**
+ * Example usage
+ */
+// Create a counter starting at 10.
+const counter = createCounter(10);
+
+// Call the counter function to get the current value and increment it.
+console.log(counter()); // Output: 10
+console.log(counter()); // Output: 11
+console.log(counter()); // Output: 12
